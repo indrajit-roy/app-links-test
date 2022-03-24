@@ -1,4 +1,9 @@
-{
-    "key" : "value",
-    "working" : true
-}
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "applinkstest",
+      "package_name": "com.example",
+      "sha256_cert_fingerprints":
+      ["A5:CB:4F:5F:2C:5F:FD:3A:BA:AA:1F:D0:50:F0:8C:C4:92:D6:85:9E:1B:FA:D8:40:AB:F3:FE:1B:29:5F:79:93"]
+    }
+  }]
