@@ -4,7 +4,7 @@ const port = 3000
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('35.154.173.109:3000')
 })
 
 app.get('/.well-known/assetlinks.json', (req, res) => {
