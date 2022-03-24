@@ -5,7 +5,7 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   res.set('Content-Type', 'text/html');
-  res.send(Buffer.from('<a href="35.154.173.109:3000">Trigger app!!</a>'));
+  res.send(Buffer.from('<a href="http://35.154.173.109:3000">Trigger app!!</a>'));
 })
 
 app.get('/.well-known/assetlinks.json', (req, res) => {
