@@ -8,8 +8,9 @@ app.get('/', (req, res) => {
   res.send(Buffer.from('<a href="http://35.154.173.109:3000">Trigger app!!</a>'));
 })
 
-app.get('/.well-known/assetlinks.json', (req, res) => {
-  res.send('Asset links')
+app.get('/applinkstest/.well-known/assetlinks.json', (req, res) => {
+   res.header("Content-Type",'application/json');
+   res.sendFile(path.join(__dirname, '/public/.well-known/assetlinks.json'));
 })
 
 app.listen(port, () => {
