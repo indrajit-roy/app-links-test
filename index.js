@@ -20,7 +20,7 @@ app.get('/applinkstest/.well-known/assetlinks', (req, res) => {
    res.sendFile(path.join(__dirname, '/public/.well-known/assetlinks.json'));
 })
 
-app.post('/update-apple-app-site-association', function(request, respond) {
+app.post('/apple-asa', function(request, respond) {
   let body = '';
   console.log(`post enter ${request}`);
   
