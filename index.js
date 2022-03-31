@@ -22,16 +22,18 @@ app.get('/applinkstest/.well-known/assetlinks', (req, res) => {
 
 app.post('/update-apple-app-site-association', function(request, respond) {
   let body = '';
-  const root = __dirname;
+  console.log(`post enter ${request}`);
   
   const filePath = path.join(__dirname,'/public/.well-known/apple-app-site-association');
+  console.log(`post enter after filePath ${request.body}`);
   request.on('data', function(data) {
-      body += data;
+    body += data;
   });
-
+  
   request.on('end', function (){
     console.log(`on end body : ${body}`);
     fs.writeFile(filePath, body, function() {
+      console.log(`post after write to ${filePath}`);
       respond.end();
     });
   });
