@@ -3,10 +3,9 @@
         "apps": [],
         "details": [
             {
-                "appID": "BFHF2F2UCF.com.smallcase.smartInvesting",
+                "appIDs": ["BFHF2F2UCF.com.smallcase.smartInvesting","BFHF2F2UCF.com.ankitdeshmukh.TestApp"],
                 "paths": ["*"]
             }
         ]
     }
 }
-
