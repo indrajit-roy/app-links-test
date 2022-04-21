@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.send(Buffer.from('<a href="https://www.flexofficial.in/redirect">Trigger app!!</a>'));
 })
 
-app.get('/', (req, res) => {
+app.get('/redirect', (req, res) => {
   res.set('Content-Type', 'text/html');
   res.send(Buffer.from('<h1>Redirected!!</h1>'));
 })
