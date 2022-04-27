@@ -25,7 +25,7 @@ app.get('/applinkstest/.well-known/assetlinks', (req, res) => {
    res.sendFile(path.join(__dirname, '/public/.well-known/assetlinks.json'));
 })
 
-app.get('/applinkstest/.well-known/assetlinks.json', (req, res) => {
+app.get('/.well-known/assetlinks.json', (req, res) => {
    res.header("Content-Type",'application/json');
    res.sendFile(path.join(__dirname, '/public/.well-know/assetlinks.json'));
 })
