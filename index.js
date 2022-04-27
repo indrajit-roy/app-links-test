@@ -27,14 +27,14 @@ app.get('/applinkstest/.well-known/assetlinks', (req, res) => {
 
 app.get('/applinkstest/.well-known/assetlinks.json', (req, res) => {
    res.header("Content-Type",'application/json');
-   res.sendFile(path.join(__dirname, '/public/.well-known/assetlinks.json'));
+   res.sendFile(path.join(__dirname, '/public/.well-know/assetlinks.json'));
 })
 
 app.post('/apple-asa', function(request, respond) {
   let body = '';
   console.log(`post enter ${request}`);
   
-  const filePath = path.join(__dirname,'/public/.well-known/apple-app-site-association');
+  const filePath = path.join(__dirname,'/public/.well-know/apple-app-site-association');
   console.log(`post enter after filePath ${request.body}`);
   request.on('data', function(data) {
     body += data;
