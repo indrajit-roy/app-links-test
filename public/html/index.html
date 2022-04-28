@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>YOU HAVE REACHED FLEXOFFICIAL</h1>
+    <a href="https://www.flexofficial.in/redirect">Trigger app!!</a>
+    <h3>I should change if the android version is not undefined</h3>
+    <button id="v_btn" onclick="setAndroidVersion()">Get Android Version</button>
+</body>
+<script>
+    function setAndroidVersion() {
+        const version = getAndroidVersion();
+        if(version !== undefined || version !== null)
+        document.getElementById("v_btn").innerHTML = `${version}`;
+    }
+    function getAndroidVersion(ua) {
+    ua = (ua || navigator.userAgent).toLowerCase(); 
+    var match = ua.match(/android\s([0-9\.]*)/i);
+    return match ? match[1] : undefined;
+    };
+</script>
+</html>

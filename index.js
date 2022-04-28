@@ -10,8 +10,9 @@ const port = 3000
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  res.set('Content-Type', 'text/html');
-  res.send(Buffer.from('<a href="https://www.flexofficial.in/redirect">Trigger app!!</a>'));
+  // res.set('Content-Type', 'text/html');
+  // res.send(Buffer.from('<a href="https://www.flexofficial.in/redirect">Trigger app!!</a>'));
+  res.sendFile(path.join(__dirname, 'public/html/index.html'));
 })
 
 app.get('/redirect', (req, res) => {
