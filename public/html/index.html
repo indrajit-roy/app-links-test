@@ -18,17 +18,19 @@
 </body>
 <script>
     function setAndroidVersion() {
+        console.log("you tried to get android version");
         const version = getAndroidVersion();
         if(version !== undefined || version !== null)
         {
             document.getElementById("v_h3").innerHTML = `${version}`;
         }
     }
+    
     function getAndroidVersion(ua) {
     ua = (ua || navigator.userAgent).toLowerCase(); 
     var match = ua.match(/android\s([0-9\.]*)/i);
     return match ? match[1] : undefined;
-    };
+    }
     
     function triggerKite() {
         window.location.href = `kite://handshake`;
