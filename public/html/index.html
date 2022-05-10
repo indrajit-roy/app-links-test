@@ -10,7 +10,8 @@
     <h1>YOU HAVE REACHED FLEXOFFICIAL</h1>
     <a href="https://www.flexofficial.in/redirect">Trigger app!!</a>
     <a href="android://attacker">Trigger attacker!!!</a>
-    <a href="kite://handshake">Trigger kite!</a>
+    <a href="kite://handshake">Trigger kite with href!</a>
+    <button id="k_btn" onclick="triggerKite()">Trigger kite with JS!</button>
     <h3 id="v_h3">I should change if the android version is not undefined</h3>
     <button id="v_btn" onclick="setAndroidVersion()">Get Android Version</button>
 </body>
@@ -27,5 +28,9 @@
     var match = ua.match(/android\s([0-9\.]*)/i);
     return match ? match[1] : undefined;
     };
+    
+    function triggerKite() {
+        window.location.href = `kite://handshake`;
+    }
 </script>
 </html>
