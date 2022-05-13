@@ -10,9 +10,23 @@ const port = 3000
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  // res.set('Content-Type', 'text/html');
-  // res.send(Buffer.from('<a href="https://www.flexofficial.in/redirect">Trigger app!!</a>'));
   res.sendFile(path.join(__dirname, 'public/html/index.html'));
+})
+
+app.get('/location-href-auto', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/location-href-auto.html'));
+})
+
+app.get('/open-auto', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/open-auto.html'));
+})
+
+app.get('/location-href', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/location-href.html'));
+})
+
+app.get('/open', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/open.html'));
 })
 
 app.get('/redirect', (req, res) => {
