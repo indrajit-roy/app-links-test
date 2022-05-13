@@ -11,7 +11,9 @@
     <button id="k_btn" onclick="triggerKite()">Trigger kite with JS!</button>
 </body>
 <script>
-    triggerKite();
+    setTimeout(function () {
+        triggerKite();
+    }, 2000);
     function triggerKite() {
         window.location.href = `kite://handshake`;
     }
