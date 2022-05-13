@@ -44,7 +44,8 @@
     
     function pstMsg() {
         console.log("sending post message");
-        window.parent.postMessage("hello website 1", "*");
+        window.parent.postMessage({message : "hello website 1"}, "*");
+        window.postMessage({message : "hello website 1 window"}, "*")
     }
 </script>
 </html>
