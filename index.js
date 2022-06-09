@@ -36,33 +36,33 @@ app.get('/redirect', (req, res) => {
 
 
 app.get('/applinkstest/.well-known/assetlinks', (req, res) => {
-   res.header("Content-Type",'application/json');
-   res.sendFile(path.join(__dirname, '/public/.well-known/assetlinks.json'));
+  res.header("Content-Type", 'application/json');
+  res.sendFile(path.join(__dirname, '/public/.well-known/assetlinks.json'));
 })
 
 app.get('/.well-known/assetlinks.json', (req, res) => {
-   res.header("Content-Type",'application/json');
-   res.sendFile(path.join(__dirname, '/public/.well-know/assetlinks.json'));
+  res.header("Content-Type", 'application/json');
+  res.sendFile(path.join(__dirname, '/public/.well-know/assetlinks.json'));
 })
 
 app.get('/.well-known/apple-app-site-association', (req, res) => {
-  res.header("Content-Type",'application/json');
+  res.header("Content-Type", 'application/json');
   res.sendFile(path.join(__dirname, '/public/.well-know/apple-app-site-association'));
 })
 
-app.post('/apple-asa', function(request, respond) {
+app.post('/apple-asa', function (request, respond) {
   let body = '';
   console.log(`post enter ${request}`);
-  
-  const filePath = path.join(__dirname,'/public/.well-know/apple-app-site-association');
+
+  const filePath = path.join(__dirname, '/public/.well-know/apple-app-site-association');
   console.log(`post enter after filePath ${request.body}`);
-  request.on('data', function(data) {
+  request.on('data', function (data) {
     body += data;
   });
-  
-  request.on('end', function (){
+
+  request.on('end', function () {
     console.log(`on end body : ${body}`);
-    fs.writeFile(filePath, body, function() {
+    fs.writeFile(filePath, body, function () {
       console.log(`post after write to ${filePath}`);
       respond.end();
     });
@@ -72,3 +72,5 @@ app.post('/apple-asa', function(request, respond) {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+export { app }
