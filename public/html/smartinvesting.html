@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Investing Debugger</title>
 </head>
+
 <body>
     <p>You are debugging SmartInvesting</p>
     <a href="scgateway://gatewaydemo">Trigger SI with href!</a>
     <a href="test://applink">Trigger AppLinkTest with href!</a>
     <button id="k_btn" onclick="triggerSI()">Trigger Smart Investing with JS!</button>
-    
+
+    <input id="in" type="Enter link to launch" onchange="onChangeListener">
+    <button id="t_btn" onclick="triggerInputHref()">locaion.href</button>
+    <button id="t_btn" onclick="triggerInputLoc()">location</button>
+    <button id="t_btn" onclick="triggerInputOpen()">open</button>
+
 </body>
 <script>
+    let input = ""
+
+    document.getElementById('in').addEventListener('input', inputHandler)
+    document.getElementById('in').addEventListener('paste', inputHandler)
+    function inputHandler(ev) {
+        input = ev.target.value
+        console.log(input);
+    }
+    function triggerInputHref(event) {
+        window.location.href = input
+    }
+    function triggerInputLoc(event) {
+        window.location = input
+    }
+    function triggerInputOpen(event) {
+        window.open(input)
+    }
     function triggerSI() {
         window.location.href = `scgateway://gatewaydemo`;
     }
 </script>
+
 </html>
