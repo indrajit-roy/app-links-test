@@ -12,6 +12,7 @@
     <a href="android://attacker">Trigger attacker!!!</a>
     <a href="kite://handshake">Trigger kite with href!</a>
     <button id="k_btn" onclick="triggerKite()">Trigger kite with JS!</button>
+    <button id="k_btn" onclick="triggerSI()">Trigger Smart Investing with JS!</button>
     <h3 id="v_h3">I should change if the android version is not undefined</h3>
     <button id="v_btn" onclick="setAndroidVersion()">Get Android Version</button>
     <button id="c_btn" onclick="myclose()">Close</button>
@@ -36,6 +37,9 @@
     
     function triggerKite() {
         window.location.href = `kite://handshake`;
+    }
+    function triggerSI() {
+        window.location.href = `scgateway://gatewaydemo`;
     }
     function myclose() {
         console.log("you have clicked close");
