@@ -33,6 +33,10 @@ app.get('/smartinvesting', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/html/smartinvesting.html'));
 })
 
+app.get('/amal', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/amal.html'));
+})
+
 app.get('/redirect', (req, res) => {
   res.set('Content-Type', 'text/html');
   res.send(Buffer.from('<h1>Redirected!!</h1>'));

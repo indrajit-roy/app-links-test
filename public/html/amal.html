@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amal Doc</title>
+    <script>
+      let target = window;
+      function getUrlValue() {
+        const inputElem = document.getElementById("url-input");
+        return inputElem.value;
+      }
+      function deeplinkAssign() {
+        target.location.href = getUrlValue();
+      }
+      function deeplinkReplace() {
+        target.location.replace(getUrlValue());
+      }
+      function deeplinkOpen() {
+        target.open(getUrlValue());
+      }
+      function targetCurrentWindow() {
+        target = window;
+      }
+      function targetParentWindow() {
+        target = window.parent;
+      }
+      function logTarget() {
+        alert(target ? target.location : "undefined");
+      }
+    </script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>url</td>
+        <td><input type="text" id="url-input" value="scgateway://gatewaydemo" width="300" height="50"/></td>
+      </tr>
+      <tr>
+        <td>open using href=</td>
+        <td><button onclick="deeplinkAssign()">Click</button></td>
+      </tr>
+      <tr>
+        <td>open using location.replace</td>
+        <td><button onclick="deeplinkReplace()">Click</button></td>
+      </tr>
+      <tr>
+        <td>open using window.open</td>
+        <td><button onclick="deeplinkOpen()">Click</button></td>
+      </tr>
+      <tr>
+        <td>set target to current</td>
+        <td><button onclick="targetCurrentWindow()">Click</button></td>
+      </tr>
+      <tr>
+        <td>set target to parent</td>
+        <td><button onclick="targetParentWindow()">Click</button></td>
+      </tr>
+      <tr>
+        <td>show target window</td>
+        <td><button onclick="logTarget()">Click</button></td>
+      </tr>
+    </table>
+  </body>
+</html>
