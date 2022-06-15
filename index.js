@@ -36,6 +36,9 @@ app.get('/smartinvesting', (req, res) => {
 app.get('/amal', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/html/amal.html'));
 })
+app.get('/amal2', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/amal2.html'));
+})
 
 app.get('/redirect', (req, res) => {
   res.set('Content-Type', 'text/html');
