@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <script>
+    let deeplink = "test://deeplink"
     let target = window;
     function getUrlValue() {
       const inputElem = document.getElementById("url-input");
@@ -37,6 +38,8 @@
       alert(target ? target.location : "undefined");
     }
     function timedRedirect() {
+      const deeplinkL = new URLSearchParams(window.location.search).get("deeplink")
+      document.getElementById("url-input").value = deeplinkL === undefined ? deeplink : deeplinkL
       const auto = new URLSearchParams(window.location.search).get("auto")
       console.log(`amal2 auto: ${auto}`);
       if (auto === "true") {
@@ -55,7 +58,7 @@
   <table>
     <tr>
       <td>url</td>
-      <td><input type="text" id="url-input" value="test://deeplink" width="300" height="50" /></td>
+      <td><input type="text" id="url-input" width="300" height="50" /></td>
     </tr>
     <tr>
       <td>target</td>
