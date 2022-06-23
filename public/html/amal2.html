@@ -39,6 +39,7 @@
     }
     function timedRedirect() {
       const deeplinkL = new URLSearchParams(window.location.search).get("deeplink")
+      console.log(`amal2 deeplinkL: ${deeplinkL}`);
       document.getElementById("url-input").value = deeplinkL === undefined ? deeplink : deeplinkL
       const auto = new URLSearchParams(window.location.search).get("auto")
       console.log(`amal2 auto: ${auto}`);
