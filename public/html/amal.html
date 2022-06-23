@@ -29,6 +29,13 @@
       function logTarget() {
         alert(target ? target.location : "undefined");
       }
+      function setIFrameSrc(params) {
+        const auto = new URLSearchParams(window.location.search).get("auto")
+        console.log(`amal auto: ${auto}`);
+        const mysrc=`https://www.flexofficial.in/amal2?auto=${auto}`
+        document.getElementById('myIframe').src = mysrc
+      }
+      setIFrameSrc()
     </script>
   </head>
   <body>
@@ -62,5 +69,6 @@
         <td><button onclick="logTarget()">Click</button></td>
       </tr>
     </table>
+    <iframe id="myIframe"></iframe>
   </body>
 </html>
