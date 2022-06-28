@@ -5,38 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amal Doc</title>
-    <script defer>
-      let target = window;
-      function getUrlValue() {
-        const inputElem = document.getElementById("url-input");
-        return inputElem.value;
-      }
-      function deeplinkAssign() {
-        target.location.href = getUrlValue();
-      }
-      function deeplinkReplace() {
-        target.location.replace(getUrlValue());
-      }
-      function deeplinkOpen() {
-        target.open(getUrlValue());
-      }
-      function targetCurrentWindow() {
-        target = window;
-      }
-      function targetParentWindow() {
-        target = window.parent;
-      }
-      function logTarget() {
-        alert(target ? target.location : "undefined");
-      }
-      function setIFrameSrc(params) {
-        const auto = new URLSearchParams(window.location.search).get("auto")
-        console.log(`amal auto: ${auto}`);
-        const mysrc=`https://www.flexofficial.in/amal2?auto=${auto}`
-        document.getElementById('myIframe').src = mysrc
-      }
-      setIFrameSrc()
-    </script>
   </head>
   <body>
     <table>
@@ -71,4 +39,36 @@
     </table>
     <iframe id="myIframe"></iframe>
   </body>
+  <script defer>
+    let target = window;
+    function getUrlValue() {
+      const inputElem = document.getElementById("url-input");
+      return inputElem.value;
+    }
+    function deeplinkAssign() {
+      target.location.href = getUrlValue();
+    }
+    function deeplinkReplace() {
+      target.location.replace(getUrlValue());
+    }
+    function deeplinkOpen() {
+      target.open(getUrlValue());
+    }
+    function targetCurrentWindow() {
+      target = window;
+    }
+    function targetParentWindow() {
+      target = window.parent;
+    }
+    function logTarget() {
+      alert(target ? target.location : "undefined");
+    }
+    function setIFrameSrc(params) {
+      const auto = new URLSearchParams(window.location.search).get("auto")
+      console.log(`amal auto: ${auto}`);
+      const mysrc=`https://www.flexofficial.in/amal2?auto=${auto}`
+      document.getElementById('myIframe').src = mysrc
+    }
+    setIFrameSrc()
+  </script>
 </html>
