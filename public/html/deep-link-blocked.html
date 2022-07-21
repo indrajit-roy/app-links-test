@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let target = window;
+      function getUrlValue() {
+        const inputElem = document.getElementById("url-input");
+        return inputElem.value;
+      }
+      function deeplinkAssign() {
+        target.location.href = getUrlValue();
+      }
+      function deeplinkReplace() {
+        target.location.replace(getUrlValue());
+      }
+      function deeplinkOpen() {
+        target.open(getUrlValue());
+      }
+      function deeplinkFancy(){
+        let redirectScript = `data:text/javascript,window.location.replace("${getUrlValue()}")`;
+        target.location.replace(redirectScript);
+      }
+    </script>
+    <style>
+        .inner {
+            width: 100%;
+            min-height: 300px;
+        }
+    </style>
+  </head>
+  <body>
+    <iframe class="inner"
+      src="https://flexofficial.in/amal2?auto=true&deeplink=scgateway://gatewaydemo-stag"
+      sandbox="allow-top-navigation allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-modals allow-downloads"
+    ></iframe>
+
+    <hr />
+    <table>
+      <tr>
+        <td>url</td>
+        <td><input type="text" id="url-input" value="scgateway://gatewaydemo-stag?code=1012&error=user_cancelled&reason=UserCancelled&status=ERRORED" width="300" height="50"/></td>
+      </tr>
+      <tr>
+        <td>open using href=</td>
+        <td><button onclick="deeplinkAssign()">Click</button></td>
+      </tr>
+      <tr>
+        <td>open using location.replace</td>
+        <td><button onclick="deeplinkReplace()">Click</button></td>
+      </tr>
+      <tr>
+        <td>open using window.open</td>
+        <td><button onclick="deeplinkOpen()">Click</button></td>
+      </tr>
+      <tr>
+        <td>fancy redirect</td>
+        <td><button onclick="deeplinkFancy()">Click</button></td>
+      </tr>
+    </table>
+
+    <pre>
+        - working in chrometabs opened in other apps even for axis iframe
+        - not working if axis opened in chrome
+        - working oustide iframe but only when launched by sdk
+        - any deeplink from within axis iframe not working
+
+
+        - to test if connect is inside iframe beacuse thats working --> its working
+        - window.close() can be a solution
+    </pre>
+  </body>
+</html>
