@@ -45,6 +45,10 @@ app.get('/amal2', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/html/amal2.html'));
 })
 
+app.get('/connect-pro', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/connect-pro.html'));
+})
+
 app.get('/redirect', (req, res) => {
   res.set('Content-Type', 'text/html');
   res.send(Buffer.from('<h1>Redirected!!</h1>'));
