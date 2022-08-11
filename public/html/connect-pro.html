@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,17 +13,19 @@
     <button id="si">Redirect to Smart Investing</button>
 </body>
 <script>
+    document.getElementById("flex").addEventListener("click", () => {
+        window.location.replace("https://www.flexofficial.in")
+    })
+    document.getElementById("si").addEventListener("click", () => {
+        window.location.replace("https://gatewaydemo-dev.verify.dev.smallcase.com")
+    })
     console.log("Script is runnning");
     setTimeout(() => {
         console.log("Attaching listeners");
-        document.getElementById("flex").addEventListener("click", ()=>{
-            window.location.replace("https://www.flexofficial.in")
-        })
-        document.getElementById("si").addEventListener("click", ()=>{
-            window.location.replace("https://gatewaydemo-dev.verify.dev.smallcase.com")
-        })
+
         console.log("Auto redirecting");
         window.location.replace("https://gatewaydemo-dev.verify.dev.smallcase.com")
     }, 2000)
 </script>
+
 </html>
