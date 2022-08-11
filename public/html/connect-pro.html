@@ -7,14 +7,17 @@
     <title>Document</title>
 </head>
 <script>
+    console.log("Script is runnning");
     setTimeout(2000, () => {
+        console.log("Attaching listeners");
         document.getElementById("flex").addEventListener("click", ()=>{
-            window.location.replace("https://www.flexofficial.in/testRedirect")
+            window.location.replace("https://www.flexofficial.in")
         })
         document.getElementById("si").addEventListener("click", ()=>{
             window.location.replace("https://gatewaydemo-dev.verify.dev.smallcase.com")
         })
-        window.location.replace("https://www.flexofficial.in/testRedirect")
+        console.log("Auto redirecting");
+        window.location.replace("https://www.flexofficial.in")
     })
 </script>
 <body>
