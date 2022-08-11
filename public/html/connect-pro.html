@@ -14,9 +14,11 @@
 </body>
 <script>
     document.getElementById("flex").addEventListener("click", () => {
+        await timeout(2000)
         window.location.replace("https://www.flexofficial.in")
     })
-    document.getElementById("si").addEventListener("click", () => {
+    document.getElementById("si").addEventListener("click", async () => {
+        await timeout(2000)
         window.location.replace("https://gatewaydemo-dev.verify.dev.smallcase.com")
     })
     console.log("Script is runnning");
@@ -25,7 +27,7 @@
 
         console.log("Auto redirecting");
         // window.open("https://gatewaydemo-dev.verify.dev.smallcase.com")
-        window.open("https://gatewaydemo.redirect.smallcase.com")
+        // window.open("https://gatewaydemo.redirect.smallcase.com")
         // window.location.replace("scgateway://gatewaydemo")
     }, 2000)
 </script>
