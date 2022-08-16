@@ -54,6 +54,10 @@ app.get('/redirect', (req, res) => {
   res.send(Buffer.from('<h1>Redirected!!</h1>'));
 })
 
+app.get('/testRedirect', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/testRedirect.html'));
+})
+
 
 app.get('/applinkstest/.well-known/assetlinks', (req, res) => {
   res.header("Content-Type", 'application/json');
