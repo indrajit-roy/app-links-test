@@ -58,6 +58,10 @@ app.get('/testRedirect', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/html/testRedirect.html'));
 })
 
+app.get('/testRedirect2', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/testRedirect2.html'));
+})
+
 
 app.get('/applinkstest/.well-known/assetlinks', (req, res) => {
   res.header("Content-Type", 'application/json');
