@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>YOU HAVE REACHED FLEXOFFICIAL</h1>
     <a href="https://www.flexofficial.in/redirect">Trigger app!!</a>
@@ -29,18 +31,17 @@
     function setAndroidVersion() {
         console.log("you tried to get android version");
         const version = getAndroidVersion();
-        if(version !== undefined || version !== null)
-        {
+        if (version !== undefined || version !== null) {
             document.getElementById("v_h3").innerHTML = `${version}`;
         }
     }
-    
+
     function getAndroidVersion(ua) {
-    ua = (ua || navigator.userAgent).toLowerCase(); 
-    var match = ua.match(/android\s([0-9\.]*)/i);
-    return match ? match[1] : undefined;
+        ua = (ua || navigator.userAgent).toLowerCase();
+        var match = ua.match(/android\s([0-9\.]*)/i);
+        return match ? match[1] : undefined;
     }
-    
+
     function triggerKite() {
         window.location.href = `kite://handshake`;
     }
@@ -52,22 +53,23 @@
         window.location.href = `test://applink`;
     }
     function triggerAppLink(isReplaceOpen) {
-        if(isReplaceOpen)
-        window.open(`https://www.flexofficial.in`)
+        if (isReplaceOpen)
+            window.open(`https://www.flexofficial.in`)
         else
-        window.location.replace(`https://www.flexofficial.in`)
-        
+            window.location.replace(`https://www.flexofficial.in`)
+
     }
-    
+
     function myclose() {
         console.log("you have clicked close");
         window.close();
     }
-    
+
     function pstMsg() {
         console.log("sending post message");
-        window.parent.postMessage({message : "hello website 1"}, "*");
-        window.postMessage({message : "hello website 1 window"}, "*")
+        window.parent.postMessage({ message: "hello website 1" }, "*");
+        window.postMessage({ message: "hello website 1 window" }, "*")
     }
 </script>
+
 </html>
