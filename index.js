@@ -10,7 +10,8 @@ const port = 3000
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/html/index.html'));
+  res.redirect("https://www.flexofficial.in/testRedirect")
+  // res.sendFile(path.join(__dirname, 'public/html/index.html'));
 })
 
 app.get('/location-href-auto', (req, res) => {
