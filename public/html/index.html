@@ -20,7 +20,10 @@
     <button id="c_btn" onclick="myclose()">Close</button>
     <button id="c_btn" onclick="pstMsg()">Post Message</button>
     <a href="test://applink">Trigger AppLinkTest with href!</a>
-    <iframe src="https://www.flexofficial.in/smartinvesting"></iframe>
+    <div style="height: 100px;"></div>
+    <button id="a_btn" onclick="triggerAppLink()">Replace Applink</button>
+    <button onclick="triggerAppLink(true)">Replace Open Applink</button>
+    <!-- <iframe src="https://www.flexofficial.in/smartinvesting"></iframe> -->
 </body>
 <script>
     function setAndroidVersion() {
@@ -47,6 +50,13 @@
     }
     function triggerAt() {
         window.location.href = `test://applink`;
+    }
+    function triggerAppLink(isReplaceOpen) {
+        if(isReplaceOpen)
+        window.open(`https://www.flexofficial.in`)
+        else
+        window.location.replace(`https://www.flexofficial.in`)
+        
     }
     
     function myclose() {
