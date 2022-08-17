@@ -23,20 +23,20 @@
     })
     document.getElementById("si").addEventListener("click", async () => {
         // await timeout(2000)
-        window.open("https://gatewaydemo-dev.verify.dev.smallcase.com")
+        // window.open("https://gatewaydemo-dev.verify.dev.smallcase.com")
         // window.location.href = "https://gatewaydemo-dev.verify.dev.smallcase.com"
-        // window.location.replace("https://gatewaydemo-dev.verify.dev.smallcase.com")
+        window.location.replace("https://gatewaydemo-dev.verify.dev.smallcase.com")
         // window.location.replace("scgatewayredirect://gatewaydemo")
         // window.location.replace("scgateway://gatewaydemo")
     })
     console.log("Script is runnning");
     setTimeout(() => {
         console.log("Attaching listeners");
-        // document.getElementById("si").click();
+        document.getElementById("si").click();
         console.log("Auto redirecting");
         // window.open("https://gatewaydemo-dev.verify.dev.smallcase.com")
         // window.open("https://gatewaydemo.redirect.smallcase.com")
-    }, 1000)
+    }, 3000)
 </script>
 
 </html>

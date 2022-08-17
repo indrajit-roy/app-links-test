@@ -24,6 +24,7 @@
     <a href="test://applink">Trigger AppLinkTest with href!</a>
     <div style="height: 100px;"></div>
     <button id="a_btn" onclick="triggerAppLink()">Replace Applink</button>
+    <button id="a_btn" onclick="triggerAppLink()">Replace Applink</button>
     <button onclick="triggerAppLink(true)">Replace Open Applink</button>
     <!-- <iframe src="https://www.flexofficial.in/smartinvesting"></iframe> -->
 </body>
@@ -52,11 +53,12 @@
     function triggerAt() {
         window.location.href = `test://applink`;
     }
-    function triggerAppLink(isReplaceOpen) {
+    function triggerAppLink(isReplaceOpen, link) {
+        const applink = link === undefined ? `https://www.flexofficial.in` : link
         if (isReplaceOpen)
-            window.open(`https://www.flexofficial.in`)
+            window.open(applink)
         else
-            window.location.replace(`https://www.flexofficial.in`)
+            window.location.replace(applink)
 
     }
 
