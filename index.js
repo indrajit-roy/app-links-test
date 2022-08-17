@@ -47,8 +47,8 @@ app.get('/amal2', (req, res) => {
 })
 
 app.get('/connect-pro', (req, res) => {
-  // res.sendFile(path.join(__dirname, 'public/html/connect-pro.html'));
-  res.redirect("https://www.flexofficial.in/testRedirect")
+  res.sendFile(path.join(__dirname, 'public/html/connect-pro.html'));
+  // res.redirect("https://www.flexofficial.in/testRedirect")
 })
 
 app.get('/redirect', (req, res) => {
