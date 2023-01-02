@@ -2,8 +2,15 @@ import express from 'express'
 import fs from 'fs'
 import path from 'path';
 import { fileURLToPath } from 'url';
+import twilio from 'twilio';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+const TWILIO_SID = "ACedef0a14f96fda0bd901ea8e519df7a4"
+const TWILIO_TOKEN = "e4ad19da2ff52bafd198cf8016b7d6f7"
+
+const twilioClient = twilio(TWILIO_SID, TWILIO_TOKEN)
+
 const app = express()
 
 const port = 3000
@@ -79,6 +86,55 @@ app.get('/.well-known/apple-app-site-association', (req, res) => {
   res.header("Content-Type", 'application/json');
   res.sendFile(path.join(__dirname, '/public/.well-know/apple-app-site-association'));
 })
+
+app.get('/sms', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/sms.html'));
+})
+
+app.post('/send-sms', function (request, response) {
+
+  console.log(`send-sms hit! ${JSON.stringify(request.query)}`);
+  let dummyOTP = "9876"
+  const codeParam = request.query['code']
+  if (codeParam !== undefined) {
+    if (codeParam.length > 0) {
+      dummyOTP = codeParam
+    }
+  }
+
+  let body = `The hash of the app goes with code - ${dummyOTP}`
+  const bodyParam = request.query['body']
+  if (bodyParam !== undefined) {
+    if (bodyParam.length > 0) {
+      body = bodyParam
+    }
+  }
+
+  let targetPhone = '+918334030949'
+  const phoneParam = request.query['phone']
+  if (phoneParam !== undefined) {
+    if (phoneParam.length > 0) {
+      targetPhone = request.query['phone']
+    }
+  }
+
+  twilioClient.messages
+    .create({
+      body: body,
+      to: targetPhone, // Text this number
+      from: '+12673883981', // From a valid Twilio number
+    })
+    .then((message) => {
+      console.log(message.sid)
+      response.status(200)
+      response.send('<h1>SMS sent!</h1>')
+    }).catch((ex) => {
+      console.log(message.sid)
+      console.log(ex)
+      response.status(500)
+      response.send(`<h1>ERROR!! ${ex} </h1>`)
+    });
+});
 
 app.post('/apple-asa', function (request, respond) {
   let body = '';

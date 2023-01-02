@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Verify</title>
+    <script src="../javascript/sms.js"  defer></script>
+</head>
+<body>
+    <h1>SMS Verification</h1>
+    <input id="phno" type="text" placeholder="Enter target ph. no.">
+
+    <input id="code" type="text" placeholder="Enter custom code">
+    <input id="hash" type="text" placeholder="Enter custom hash">
+
+    <input id="body" type="text" placeholder="Enter custom message body">
+    <button onclick="sendMessage()">SEND SMS</button>
+</body>
+</html>
